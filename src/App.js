@@ -12,7 +12,9 @@ function App() {
   const [awayScore, setAwayScore] = useState(initialAwayScore);
 
   function handleClick(team, scoreType) {
-    console.log(team, scoreType);
+    const score = scoreType === 'touchdown' ? 7 : 3;
+    if (team === 'home') setHomeScore(homeScore + score);
+    if (team === 'away') setAwayScore(awayScore + score);
   }
 
   return (
