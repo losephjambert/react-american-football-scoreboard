@@ -6,7 +6,6 @@ import ScoreButton from './components/ScoreButton';
 import TeamScore from './components/TeamScore';
 
 function App({ initialHomeScore, initialAwayScore }) {
-  //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [homeScore, setHomeScore] = useState(initialHomeScore);
   const [awayScore, setAwayScore] = useState(initialAwayScore);
 
@@ -31,7 +30,6 @@ function App({ initialHomeScore, initialAwayScore }) {
       </section>
       <section className='buttons'>
         <div className='homeButtons'>
-          {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <ScoreButton
             classNames={['homeButtons__touchdown']}
             team='home'
