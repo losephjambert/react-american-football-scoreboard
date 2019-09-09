@@ -4,6 +4,7 @@ import './App.css';
 import BottomRow from './BottomRow';
 import ScoreButton from './components/ScoreButton';
 import TeamScore from './components/TeamScore';
+import Timer from './components/Timer';
 
 function App({ initialHomeScore, initialAwayScore }) {
   const [homeScore, setHomeScore] = useState(initialHomeScore);
@@ -21,7 +22,7 @@ function App({ initialHomeScore, initialAwayScore }) {
           <div className='home'>
             <TeamScore teamName={'Lions'} score={homeScore} />
           </div>
-          <div className='timer'>00:03</div>
+          <Timer />
           <div className='away'>
             <TeamScore teamName={'Tigers'} score={awayScore} />
           </div>
