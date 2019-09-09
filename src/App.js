@@ -22,7 +22,7 @@ function App({ initialHomeScore, initialAwayScore }) {
           <div className='home'>
             <TeamScore teamName={'Lions'} score={homeScore} />
           </div>
-          <Timer />
+          <Timer amount={12} />
           <div className='away'>
             <TeamScore teamName={'Tigers'} score={awayScore} />
           </div>
