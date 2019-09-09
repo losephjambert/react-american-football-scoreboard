@@ -2,17 +2,18 @@
 import React, { useState } from 'react';
 import './App.css';
 import BottomRow from './BottomRow';
+import ScoreButton from './components/ScoreButton';
 
 function App({ initialHomeScore, initialAwayScore }) {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [homeScore, setHomeScore] = useState(initialHomeScore);
   const [awayScore, setAwayScore] = useState(initialAwayScore);
 
-  function handleClick(team, scoreType) {
+  const handleClick = (team, scoreType) => {
     const score = scoreType === 'touchdown' ? 7 : 3;
     if (team === 'home') setHomeScore(homeScore + score);
     if (team === 'away') setAwayScore(awayScore + score);
-  }
+  };
 
   return (
     <div className='container'>
@@ -36,36 +37,36 @@ function App({ initialHomeScore, initialAwayScore }) {
       <section className='buttons'>
         <div className='homeButtons'>
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button
-            className='homeButtons__touchdown'
-            data-team='home'
-            data-scoretype='touchdown'
-            onClick={e => handleClick(e.target.dataset.team, e.target.dataset.scoretype)}>
-            Home Touchdown
-          </button>
-          <button
-            className='homeButtons__fieldGoal'
-            data-team='home'
-            data-scoretype='fieldGoal'
-            onClick={e => handleClick(e.target.dataset.team, e.target.dataset.scoretype)}>
-            Home Field Goal
-          </button>
+          <ScoreButton
+            classNames={['homeButtons__touchdown']}
+            team='home'
+            scoreType='touchdown'
+            onClick={handleClick}
+            text={'Home Touchdown'}
+          />
+          <ScoreButton
+            classNames={['homeButtons__fieldGoal']}
+            team='home'
+            scoreType='fieldGoal'
+            onClick={handleClick}
+            text={'Home Field Goal'}
+          />
         </div>
         <div className='awayButtons'>
-          <button
-            className='awayButtons__touchdown'
-            data-team='away'
-            data-scoretype='touchdown'
-            onClick={e => handleClick(e.target.dataset.team, e.target.dataset.scoretype)}>
-            Away Touchdown
-          </button>
-          <button
-            className='awayButtons__fieldGoal'
-            data-team='away'
-            data-scoretype='fieldGoal'
-            onClick={e => handleClick(e.target.dataset.team, e.target.dataset.scoretype)}>
-            Away Field Goal
-          </button>
+          <ScoreButton
+            classNames={['awayButtons__touchdown']}
+            team='away'
+            scoreType='touchdown'
+            onClick={handleClick}
+            text={'Away Touchdown'}
+          />
+          <ScoreButton
+            classNames={['awayButtons__fieldGoal']}
+            team='away'
+            scoreType='fieldGoal'
+            onClick={handleClick}
+            text={'Away Field Goal'}
+          />
         </div>
       </section>
     </div>
