@@ -28,18 +28,6 @@ const Timer = ({ amount }) => {
     return () => clearInterval(interval);
   }, [time]);
 
-  // const handleCountdown = () => {
-  //   const timeRemaining = parseInt(time - 1000);
-  //   console.log(timeRemaining);
-
-  //   if (timeRemaining >= 0) {
-  //     setTime(timeRemaining);
-  //   } else {
-  //     setTime(0);
-  //   }
-  // };
-  // setInterval(handleCountdown, 1000);
-
   return (
     <div className='timer'>
       {minutes}:{seconds}
