@@ -41,8 +41,7 @@
   background-color: #af750a;
 }
 
-.home__name,
-.away__name,
+.team__name,
 .down__title,
 .toGo__title,
 .ballOn__title,
@@ -52,9 +51,8 @@
   padding: 2rem;
 }
 
-.home__score,
-.away__score {
-  font-family: "Ozone";
+.team__score {
+  font-family: 'Ozone';
   font-size: 7rem;
   width: 90%;
   text-align: center;
@@ -64,7 +62,7 @@
 }
 
 .timer {
-  font-family: "Ozone";
+  font-family: 'Ozone';
   font-size: 9rem;
   padding: 2rem;
   text-align: center;
@@ -94,7 +92,7 @@
 .toGo__value,
 .ballOn__value,
 .quarter__value {
-  font-family: "Ozone";
+  font-family: 'Ozone';
   font-size: 5rem;
   color: var(--red);
   width: 7rem;
