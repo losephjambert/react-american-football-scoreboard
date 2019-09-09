@@ -9,7 +9,11 @@ function App() {
   const [homeScore, setHomeScore] = useState(initialHomeScore);
 
   const initialAwayScore = 0;
-  const [awayScore, setAwayScore] = useState(initialHomeScore);
+  const [awayScore, setAwayScore] = useState(initialAwayScore);
+
+  function handleClick(team, scoreType) {
+    console.log(team, scoreType);
+  }
 
   return (
     <div className='container'>
@@ -33,12 +37,36 @@ function App() {
       <section className='buttons'>
         <div className='homeButtons'>
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button className='homeButtons__touchdown'>Home Touchdown</button>
-          <button className='homeButtons__fieldGoal'>Home Field Goal</button>
+          <button
+            className='homeButtons__touchdown'
+            data-team='home'
+            data-scoretype='touchdown'
+            onClick={e => handleClick(e.target.dataset.team, e.target.dataset.scoretype)}>
+            Home Touchdown
+          </button>
+          <button
+            className='homeButtons__fieldGoal'
+            data-team='home'
+            data-scoretype='fieldGoal'
+            onClick={e => handleClick(e.target.dataset.team, e.target.dataset.scoretype)}>
+            Home Field Goal
+          </button>
         </div>
         <div className='awayButtons'>
-          <button className='awayButtons__touchdown'>Away Touchdown</button>
-          <button className='awayButtons__fieldGoal'>Away Field Goal</button>
+          <button
+            className='awayButtons__touchdown'
+            data-team='away'
+            data-scoretype='touchdown'
+            onClick={e => handleClick(e.target.dataset.team, e.target.dataset.scoretype)}>
+            Away Touchdown
+          </button>
+          <button
+            className='awayButtons__fieldGoal'
+            data-team='away'
+            data-scoretype='fieldGoal'
+            onClick={e => handleClick(e.target.dataset.team, e.target.dataset.scoretype)}>
+            Away Field Goal
+          </button>
         </div>
       </section>
     </div>
