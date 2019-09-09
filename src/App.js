@@ -21,10 +21,7 @@ function App({ initialHomeScore, initialAwayScore }) {
         <div className='topRow'>
           <TeamScore teamName={'Lions'} score={homeScore} />
           <div className='timer'>00:03</div>
-          <div className='away'>
-            <h2 className='away__name'>Tigers</h2>
-            <div className='away__score'>{awayScore}</div>
-          </div>
+          <TeamScore teamName={'Tigers'} score={awayScore} />
         </div>
         <BottomRow />
       </section>
