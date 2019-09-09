@@ -9,8 +9,7 @@ function App({ initialHomeScore, initialAwayScore }) {
   const [homeScore, setHomeScore] = useState(initialHomeScore);
   const [awayScore, setAwayScore] = useState(initialAwayScore);
 
-  const handleClick = (team, scoreType) => {
-    const score = scoreType === 'touchdown' ? 7 : 3;
+  const handleClick = (team, score) => {
     if (team === 'home') setHomeScore(homeScore + score);
     if (team === 'away') setAwayScore(awayScore + score);
   };
@@ -40,14 +39,14 @@ function App({ initialHomeScore, initialAwayScore }) {
           <ScoreButton
             classNames={['homeButtons__touchdown']}
             team='home'
-            scoreType='touchdown'
+            score={7}
             onClick={handleClick}
             text={'Home Touchdown'}
           />
           <ScoreButton
             classNames={['homeButtons__fieldGoal']}
             team='home'
-            scoreType='fieldGoal'
+            score={3}
             onClick={handleClick}
             text={'Home Field Goal'}
           />
@@ -56,14 +55,14 @@ function App({ initialHomeScore, initialAwayScore }) {
           <ScoreButton
             classNames={['awayButtons__touchdown']}
             team='away'
-            scoreType='touchdown'
+            score={7}
             onClick={handleClick}
             text={'Away Touchdown'}
           />
           <ScoreButton
             classNames={['awayButtons__fieldGoal']}
             team='away'
-            scoreType='fieldGoal'
+            score={3}
             onClick={handleClick}
             text={'Away Field Goal'}
           />
