@@ -18,7 +18,6 @@ export default function StartGame() {
   };
 
   const handleOnChange = (key, value) => {
-    console.log(key, value);
     setFormData(prevState => {
       return { ...prevState, [key]: value };
     });
