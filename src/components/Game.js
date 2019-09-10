@@ -14,18 +14,25 @@ function Game({ gameInfo, initialHomeScore, initialAwayScore }) {
     if (team === "away") setAwayScore(awayScore + score);
   };
 
-  console.log(gameInfo);
+  const {
+    homeTeamName,
+    homeTeamColor,
+    awayTeamName,
+    awayTeamColor,
+    periodLength,
+    numPeriods
+  } = gameInfo;
 
   return (
     <div className="container">
       <section className="scoreboard">
         <div className="topRow">
-          <div className="home">
-            <TeamScore teamName={"Lions"} score={homeScore} />
+          <div className="home" style={{ backgroundColor: homeTeamColor }}>
+            <TeamScore teamName={homeTeamName} score={homeScore} />
           </div>
-          <Timer amount={12} />
-          <div className="away">
-            <TeamScore teamName={"Tigers"} score={awayScore} />
+          <Timer amount={periodLength} />
+          <div className="away" style={{ backgroundColor: awayTeamColor }}>
+            <TeamScore teamName={awayTeamName} score={awayScore} />
           </div>
         </div>
         <BottomRow />

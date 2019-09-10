@@ -74,7 +74,7 @@ export default function StartGame() {
           <input
             id="awayTeamName"
             type="text"
-            onChange={e => handleOnChange("awayTeam", e.target.value)}
+            onChange={e => handleOnChange("awayTeamName", e.target.value)}
           />
         </div>
         <div>
