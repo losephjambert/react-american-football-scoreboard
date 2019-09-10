@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Game from "./Game";
+import "./StartGame.css";
+import Game from "../Game";
 
 export default function StartGame() {
   const [submitted, setSubmitted] = useState(false);
