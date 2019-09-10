@@ -1,70 +1,8 @@
 //TODO: STEP 1 - Import the useState hook.
-import React, { useState } from 'react';
-import './App.css';
-import BottomRow from './BottomRow';
-import ScoreButton from './components/ScoreButton';
-import TeamScore from './components/TeamScore';
-import Timer from './components/Timer';
-
-function App({ initialHomeScore, initialAwayScore }) {
-  const [homeScore, setHomeScore] = useState(initialHomeScore);
-  const [awayScore, setAwayScore] = useState(initialAwayScore);
-
-  const handleClick = (team, score) => {
-    if (team === 'home') setHomeScore(homeScore + score);
-    if (team === 'away') setAwayScore(awayScore + score);
-  };
-
-  return (
-    <div className='container'>
-      <section className='scoreboard'>
-        <div className='topRow'>
-          <div className='home'>
-            <TeamScore teamName={'Lions'} score={homeScore} />
-          </div>
-          <Timer amount={12} />
-          <div className='away'>
-            <TeamScore teamName={'Tigers'} score={awayScore} />
-          </div>
-        </div>
-        <BottomRow />
-      </section>
-      <section className='buttons'>
-        <div className='homeButtons'>
-          <ScoreButton
-            classNames={['homeButtons__touchdown']}
-            team='home'
-            score={7}
-            onClick={handleClick}
-            text={'Home Touchdown'}
-          />
-          <ScoreButton
-            classNames={['homeButtons__fieldGoal']}
-            team='home'
-            score={3}
-            onClick={handleClick}
-            text={'Home Field Goal'}
-          />
-        </div>
-        <div className='awayButtons'>
-          <ScoreButton
-            classNames={['awayButtons__touchdown']}
-            team='away'
-            score={7}
-            onClick={handleClick}
-            text={'Away Touchdown'}
-          />
-          <ScoreButton
-            classNames={['awayButtons__fieldGoal']}
-            team='away'
-            score={3}
-            onClick={handleClick}
-            text={'Away Field Goal'}
-          />
-        </div>
-      </section>
-    </div>
-  );
+import React from 'react';
+import StartGame from './components/StartGame';
+function App() {
+  return <StartGame />;
 }
 
 export default App;
