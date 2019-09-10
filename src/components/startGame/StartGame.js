@@ -6,8 +6,8 @@ export default function StartGame() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     homeTeamName: 'Home',
-    homeTeamColor: 'Away',
-    awayTeamName: '',
+    homeTeamColor: '',
+    awayTeamName: 'Away',
     awayTeamColor: '',
     periodLength: 1,
     numPeriods: 1,
